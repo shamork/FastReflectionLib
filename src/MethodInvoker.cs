@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
+using System.Linq;
+using System.Text;
 using System.Reflection;
+using System.Linq.Expressions;
 
 namespace FastReflectionLib
 {
@@ -72,7 +74,7 @@ namespace FastReflectionLib
             else
             {
                 var castMethodCall = Expression.Convert(methodCall, typeof(object));
-                var lambda = Expression.Lambda<Func<object, object[], object>>(
+                var lambda =Expression.Lambda<Func<object, object[], object>>(
                     castMethodCall, instanceParameter, parametersParameter);
 
                 return lambda.Compile();
@@ -86,6 +88,6 @@ namespace FastReflectionLib
             return this.Invoke(instance, parameters);
         }
 
-        #endregion IMethodInvoker Members
+        #endregion
     }
 }

@@ -1,4 +1,9 @@
-﻿using System.Reflection;
+﻿
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Reflection;
 
 namespace FastReflectionLib
 {
@@ -16,6 +21,6 @@ namespace FastReflectionLib
             return this.Create(key);
         }
 
-        #endregion IFastReflectionFactory<ConstructorInfo,IConstructorInvoker> Members
+        #endregion
     }
 }
